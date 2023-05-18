@@ -1,8 +1,11 @@
 import telegram.ext
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-telegramtoken = "5991830387:AAGjMm-B3Um91Ny9719Co4ugFf3hqOHct3s"
+telegramtoken = os.getenv('telegramtoken')
 
-updater = telegram.ext.Updater("5991830387:AAGjMm-B3Um91Ny9719Co4ugFf3hqOHct3s", use_context=True)
+updater = telegram.ext.Updater(telegramtoken, use_context=True)
 dispatcher = updater.dispatcher
 
 def start(update, context):
